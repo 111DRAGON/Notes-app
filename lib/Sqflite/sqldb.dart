@@ -25,7 +25,7 @@ class SqlDb {
   }
 
   _onCreate(Database db, int version) async {
-    await db.execute( '''
+    await db.execute('''
   CREATE TABLE "notes" (
     "id" INTEGER  NOT NULL PRIMARY KEY AUTOINCREMENT, 
     "title" TEXT NOT NULL,
@@ -33,7 +33,8 @@ class SqlDb {
     "date" TEXT NOT NULL
   )
  ''');
-    print("------------------------ onCreate =====================================");
+    print(
+        "------------------------ onCreate =====================================");
   }
 
   readData(String sql) async {
@@ -60,9 +61,9 @@ class SqlDb {
     return response;
   }
 
-  myDeleteDatabase() async{
-    String databasepath =await getDatabasesPath();
-    String path =join(databasepath,"notes.db");
+  myDeleteDatabase() async {
+    String databasepath = await getDatabasesPath();
+    String path = join(databasepath, "notes.db");
     await deleteDatabase(path);
   }
 }

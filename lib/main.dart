@@ -7,18 +7,17 @@ import 'package:notes_app/theme/theme%20services.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   GetStorage.init();
-  runApp( MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
-    return   GetMaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage() ,
+      home: HomePage(),
       theme: Themes.lightTheme,
-      darkTheme:Themes.darkTheme,
+      darkTheme: Themes.darkTheme,
       themeMode: ThemeService().mode,
     );
   }
